@@ -71,8 +71,7 @@ body {
   font-weight: 600;
   font-size: 1.5rem;
   transform: rotate(-90deg);
-  /* color: #21c61e; */
-  color: black;
+  color: #21c61e;
 }
 
 .content {
@@ -172,6 +171,14 @@ body {
   background-size: 145px 175px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.result {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #21c61e;
 }
 
 @media only screen and (max-width: 1000px) {
