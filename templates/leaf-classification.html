@@ -4,5 +4,52 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/lfc.css')}}" />
 
 {% endblock %} {% block content %}
-<div class="page-wrapper"></div>
+<div class="page-wrapper">
+  <div class="left-container">
+    <div class="meta">
+        <div class="logo">BIOBIT</div>
+        <div class="border"></div>
+        <div class="github"><div class="link">Github</div></div>
+    </div>
+    <div class="content">
+        <div class="title">
+            <span class="title-accent">Leaf</span><br />Disease<br />Classifiaction
+        </div>
+        <div class="description">
+            Classify various kinds of moong life diseases with just a photo of their leaf.
+            The CNN model is trained to classify leafs with over 85% accuracy into 4 main
+            categories: Cercospora, Powdery Mildew, Yellow Mosaic and healthy.
+            Upload the photo of your leaf to check it’s health now!
+        </div>
+        <form id="uploadForm" enctype="multipart/form-data" method="POST">
+            <label for="image-upload" class="uploadBtn">TRY IT</label>
+            <input id = "image-upload" type = "file" accept="image/*" name="file" style="display: none;" />
+            <button type="submit" class="predict" id="btn-predict">PREDICT</button>
+        </form>
+        
+        <div class = "image-section" style="display: none">
+            <div class = "img-preview">
+                <div id="imagePreview"></div>
+            </div>
+        </div>
+
+        <div style="margin: 1rem 0">
+          <p id="result">This is the result</p>
+        </div>
+    </div>
+  </div>
+    <div class="right-container">
+      <img
+        src="{{url_for('static', filename='assets/prop.png')}}"
+        class="prop"
+      />
+    </div>
+</div>
+</div>
+  {% endblock %}
+
+{% block scriptFooter %}
+  <footer>
+    <script type="text/javascript" src = "{{ url_for('static', filename='js/form-script.js') }}"></script>
+  </footer>
 {% endblock %}
