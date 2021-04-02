@@ -18,9 +18,7 @@ categories = ["Cercospora", "Healthy", "Powder Mildew", "Yellow Mosaic"]
 @app.route("/", methods=['GET', 'POST'])
 def home():
     if request.method == "POST":
-        print("Reached Here")
         f = request.files['file']
-        print("Reached Here")
         file_path = os.path.join(os.path.dirname(__file__), 'uploads', secure_filename(f.filename))
         f.save(file_path)
 
