@@ -21,10 +21,12 @@
             categories: Cercospora, Powdery Mildew, Yellow Mosaic and healthy.
             Upload the photo of your leaf to check it’s health now!
         </div>
-        <form id="uploadForm" enctype="multipart/form-data" method="POST">
-            <label for="image-upload" class="uploadBtn">TRY IT</label>
-            <input id = "image-upload" type = "file" accept="image/*" name="file" style="display: none;" />
-            <button type="submit" class="predict" id="btn-predict">PREDICT</button>
+        <form id="uploadForm" enctype="multipart/form-data" method="POST" action="/">
+            <div style="display: flex;">
+                <label for="image-upload" class="uploadBtn">TRY IT</label>
+                <input id = "image-upload" type = "file" name="file" accept="image/*" style="display: none;" />
+                <button type="submit" class="predict" id="btn-predict">PREDICT</button>
+            </div>
         </form>
         
         <div class = "image-section" style="display: none">
@@ -34,7 +36,7 @@
         </div>
 
         <div style="margin: 1rem 0">
-          <p id="result">This is the result</p>
+            <p id="result">{{result}}</p>
         </div>
     </div>
   </div>
