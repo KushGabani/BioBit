@@ -168,7 +168,7 @@ body {
   background-position: center;
 }
 
-.result {
+#result {
   font-family: Work Sans;
   font-style: normal;
   font-weight: 600;

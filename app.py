@@ -25,9 +25,10 @@ def home():
         img = cv2.resize(img, (256, 256))
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = np.expand_dims(img, axis=0)
-        model = tf.keras.models.load_model("./nn_model/controlled.hdf5")
+        model = tf.keras.models.load_model("./nn_model/combined.hdf5")
         prediction = model.predict(img)
-        result = categories[np.argmax(prediction)]
+        result = str(np.max(prediction) * 100) + "% " + \
+            categories[np.argmax(prediction)]
 
         return render_template('leaf-classification.html', result=result)
     else:
